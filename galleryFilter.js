@@ -333,7 +333,6 @@ $(function () {
   $('.gallery-view').on('click', '.tag-badge', function(){
     $('.pillbox').val(null).trigger('change');
     var tag = $(this).text();
-    console.log(tag);
     $('.pillbox').val(tag).trigger("change");
     processPillBox();
   })

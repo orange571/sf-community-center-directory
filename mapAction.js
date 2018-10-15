@@ -336,15 +336,12 @@ function flyAndPrintToHub(hubObjectId) {
 var urlParams = new URLSearchParams(window.location.search);
 
 if(urlParams.has('hub')){
-  console.log(urlParams.get('hub'));
   var hubId = urlParams.get('hub');
   flyAndPrintToHub(hubId);
 }
 
 $("#location-container").on("click",'.location-summary', function () {
-  console.log("fired");
   var hubObjectId = $(this).closest('.location-summary')[0].dataset.hubId;
-  console.log(hubObjectId);
   flyAndPrintToHub(hubObjectId);
 })
 

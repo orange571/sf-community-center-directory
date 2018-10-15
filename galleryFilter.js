@@ -257,7 +257,7 @@ $(function () {
     listContents += "<p><a href='"+data[i].website+"' target='blank'>" + data[i].website + "</a></p>";
     listContents += data[i].phone ? "<p>" + data[i].phone + "</p>" : "";
     listContents += data[i].email ? "<p><a href='mailto:"+data[i].email+"'>"  + data[i].email + "</a></p>" : "";
-    listContents += "<a href='index.html?hub="+data[i].id+"' target='blank'><button class='map-btn'>See On Map</button></a>";
+    listContents += "<a href='map.html?hub="+data[i].id+"' target='blank'><button class='map-btn'>See On Map</button></a>";
     listContents += "</div>";
     listContents += "<div class='hub-tags'>Tags: ";
     for (var j=0; j<data[i].tags.length; j++) {

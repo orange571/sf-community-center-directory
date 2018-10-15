@@ -314,7 +314,7 @@ function printDetails(hubObjectId) {
 	detailContents += "</div>";
 	detailContents += "<div class='description'>";
 	detailContents += "<blockquote cite='"+data[hubIndex].website+"'>" + data[hubIndex].description + "</blockquote>";
-	detailContents += "<cite> - <a href='" + data[hubIndex].website + "'> "+ data[hubIndex].website +"</a></cite>"
+	detailContents += "<cite> - <a href='" + data[hubIndex].website + "'> "+ data[hubIndex].website +"</a></cite>";
 	detailContents += "</div></section>";
 	$('.location-details').html(detailContents);
 }

@@ -34,7 +34,7 @@ var data = [
             "phone": "(415) 755-2342",
             "coordinates": "37.7526958,-122.5080134",
             "tags": ["education","family support services","arts","youth","wellness","social ","food"],
-            "description": "<p>The Sunset Neighborhood Beacon Center (SNBC) is a community-based organization serving San Francisco&rsquo;s Sunset District. SNBC provides supports and opportunities to ensure the healthy development of children, youth, and adults. Since 1996 we have connected people to their passion, potential, and community.</p><p>Every day, SNBC offers numerous high quality, free programs to 1,200 youth and adults on San Francisco&rsquo;s west side. Our programs include:</p><ul><li>Afterschool Programs</li><li>Computer Technology Programs</li><li>Skill-building Classes for Adults</li><li>Comprehensive Summer Program</li><li>Family Support Services</li><li>Events and Celebrations</li></ul><p>SNBC&rsquo;s mission and purpose are rooted in our belief that healthy, educated residents are better able to contribute to the long-term success of their community.</p></div>"
+            "description": "<p>The Sunset Neighborhood Beacon Center (SNBC) is a community-based organization serving San Francisco&rsquo;s Sunset District. SNBC provides supports and opportunities to ensure the healthy development of children, youth, and adults. Since 1996 we have connected people to their passion, potential, and community.</p><p>Every day, SNBC offers numerous high quality, free programs to 1,200 youth and adults on San Francisco&rsquo;s west side. Our programs include:</p><ul><li>Afterschool Programs</li><li>Computer Technology Programs</li><li>Skill-building Classes for Adults</li><li>Comprehensive Summer Program</li><li>Family Support Services</li><li>Events and Celebrations</li></ul><p>SNBC&rsquo;s mission and purpose are rooted in our belief that healthy, educated residents are better able to contribute to the long-term success of their community.</p>"
         },
         {
             "id": "4",
@@ -314,9 +314,10 @@ function printDetails(hubObjectId) {
 	detailContents += "</div>";
 	detailContents += "<div class='description'>";
 	detailContents += "<blockquote cite='"+data[hubIndex].website+"'>" + data[hubIndex].description + "</blockquote>";
-	detailContents += "<cite> - <a href='" + data[hubIndex].website + "'>"+ data[hubIndex].website +"</a></cite>";
+	detailContents += "<cite>- <a href='" + data[hubIndex].website + "'>"+ data[hubIndex].website +"</a></cite>";
 	detailContents += "</div></section>";
 	$('.location-details').html(detailContents);
+  console.log(detailContents);
 }
 
 function flyAndPrintToHub(hubObjectId) {

@@ -296,7 +296,6 @@ function getHubTarget(hubObjectId) {
 	return hubTarget;
 }
 
-
 function printDetails(hubObjectId) {
 	var hubIndex;
 	for (var i=0; i<data.length; i++) {
@@ -335,7 +334,6 @@ function flyAndPrintToHub(hubObjectId) {
 }
 
 var urlParams = new URLSearchParams(window.location.search);
-console.log(window.location.search);
 
 if(urlParams.has('hub')){
   console.log(urlParams.get('hub'));
@@ -343,8 +341,11 @@ if(urlParams.has('hub')){
   flyAndPrintToHub(hubId);
 }
 
-  $(".location-summary").on("click", function () {
-    var hubObjectId = $(this).closest('.location-summary')[0].dataset.hubId;
-    flyAndPrintToHub(hubObjectId);
-  })
+$("#location-container").on("click",'.location-summary', function () {
+  console.log("fired");
+  var hubObjectId = $(this).closest('.location-summary')[0].dataset.hubId;
+  console.log(hubObjectId);
+  flyAndPrintToHub(hubObjectId);
+})
+
 });

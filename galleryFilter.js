@@ -249,7 +249,7 @@ $(function () {
   for (var i=0; i<data.length; i++) {
     listContents += "<div class='hub-item active' data-hub-id='" + data[i].id + "'>";
     listContents += data[i].logo ? "<div class='hub-image-card'>" : "<div class='hub-image-card no-img'>";
-    listContents += data[i].logo ? "<img src='"+ data[i].logo +"'/>" : "<h2>" + data[i].name + "</h2>";
+    listContents += data[i].logo ? "<img src='"+ data[i].logo +"' alt='" +data[i].name+" logo' title='" +data[i].name+"'/>" : "<h2>" + data[i].name + "</h2>";
     listContents += "</div>";
     listContents += "<div class='hub-info'>";
     listContents += "<h3>" + data[i].name + "</h3>";

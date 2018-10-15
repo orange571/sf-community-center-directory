@@ -39,7 +39,7 @@ header.landing h1{
   font-size: 2rem;
 }
 
-header.landing button{
+.landing-btn{
   font-size: 1.2rem;
   background-color: #999;
   color: #fff;
@@ -48,24 +48,29 @@ header.landing button{
   border-style: none;
   padding: 1rem;
   margin: 0.5rem;
+  text-decoration: none;
+  display: inline-block;
 }
 
 @media (min-width: 500px) {
   header.landing h1{
     font-size: 4rem;
   }
-  header.landing button{
+  .landing-btn{
     font-size: 2rem;
   }
 }
 
-header.landing button:hover{
+.landing-btn:hover{
   background-color: #444;
   cursor: pointer;
+  text-decoration: none;
+  color: #fff;
 }
 
 footer {
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
   padding: 1.0rem;
   padding-bottom: 0;
   background-color: #000;
@@ -77,12 +82,8 @@ footer .fa{
   margin: 0 0.2rem;
 }
 
-footer address {
-  float: right;
-}
-
 .custom-toggler .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,<svg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'><path stroke='rgba(0, 0, 0, 0.9)' stroke-width='3.5' stroke-linecap='square' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.9)' stroke-width='3.5' stroke-linecap='square' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/></svg>");
 }
 
 button.navbar-toggler {
@@ -284,6 +285,11 @@ nav {
   justify-content: center;
 }
 
+/* Display to be toggled by .active class */
+.hub-item, .list .hub-item-container .hub-item {
+  display: none;
+}
+
 .grid .hub-item-container .hub-item {
   flex: 1 0 10rem;
   max-width: 15rem;
@@ -297,14 +303,33 @@ nav {
   }
 }
 
+.grid .hub-item.active {
+  display: block;
+}
+
+.list .hub-item-container .hub-item {
+  background-color: #ddd;
+  margin: 1.5rem 1.0rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.list .hub-item-container .hub-item.active {
+  display: flex;
+}
+
+.hub-item-container .hub-item .hub-image-card {
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .grid .hub-item-container .hub-item .hub-image-card {
   padding: 1rem;
   width: 100%;
   height: 10rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #ddd;
 }
 
 @media (min-width: 800px) {
@@ -315,28 +340,51 @@ nav {
   }
 }
 
-.grid .hub-item-container .hub-item img{
+.list .hub-item-container .hub-item .hub-image-card {
+  flex: 1 1 auto;
+  padding: 0.3rem;
+  max-width: 150px;
+  min-width: 100px;
+}
+
+.list .hub-item-container .hub-item .hub-image-card.no-img {
+  display: none;
+}
+
+.hub-item-container .hub-item img{
   max-width:100%;
   max-height:100%;
 }
 
-
-
-.grid .hub-item-container .hub-item .hub-info{
-  padding: 1rem;
-  display: none;
-  max-width: 100%;
+.hub-item-container .hub-item .hub-info {
   background-color: #eee;
+  padding: 1rem;
 }
 
-.grid .hub-item-container .hub-item .hub-info p{
+.grid .hub-item-container .hub-item .hub-info{
+  display: none;
+  max-width: 100%;
+}
+
+.list .hub-item-container .hub-item .hub-info{
+  flex: 1 1 auto;
+}
+
+.hub-item-container .hub-item .hub-info p{
   margin-bottom: 0.3rem;
+}
+
+.hub-item-container .hub-item .hub-tags {
+  background-color: #f6f6f6;
+  padding: 1rem;
 }
 
 .grid .hub-item-container .hub-item .hub-tags{
   width: 100%;
-  background-color: #f6f6f6;
-  padding: 1rem;
+}
+
+.list .hub-item-container .hub-item .hub-tags{
+  flex: 1 1 auto;
 }
 
 .tag-badge{
@@ -393,16 +441,12 @@ nav {
   margin-right: 1rem;
 }
 
-.hub-item, .list .hub-item-container .hub-item {
+.grid .expand-btn {
+  display: inline-block;
+}
+
+.list .expand-btn {
   display: none;
-}
-
-.grid .hub-item.active {
-  display: block;
-}
-
-.list .hub-item-container .hub-item.active {
-  display: flex;
 }
 
 .settings {
@@ -416,74 +460,23 @@ nav {
 }
 
 .settings .settings-btn{
-  background-color: inherit;
+  background-color: #fff;
   color: #555;
   margin-left: 1.0rem;
 }
 
 .settings .settings-btn:hover{
-  background-color: inherit;
+  background-color: #fff;
   color: #000;
-}
-
-.grid .expand-btn {
-  display: inline-block;
-}
-
-.list .expand-btn {
-  display: none;
-}
-
-
-.list .hub-item-container {
-
-}
-
-.list .hub-item-container .hub-item {
-  background-color: #ddd;
-  margin: 1.5rem 1.0rem;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-
-.list .hub-item-container .hub-item .hub-image-card {
-  flex: 1 1 auto;
-  padding: 0.3rem;
-  max-width: 150px;
-  min-width: 100px;
-  background-color: #ddd;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.list .hub-item-container .hub-item .hub-image-card.no-img {
-  display: none;
-}
-
-.list .hub-item-container .hub-item img{
-  max-width:100%;
-  max-height:100%;
-}
-
-.list .hub-item-container .hub-item .hub-info{
-  flex: 1 1 auto;
-  padding: 1rem;
-  background-color: #eee;
-}
-
-.list .hub-item-container .hub-item .hub-info p{
-  margin-bottom: 0.3rem;
-}
-
-.list .hub-item-container .hub-item .hub-tags{
-  flex: 1 1 auto;
-  background-color: #f6f6f6;
-  padding: 1rem;
 }
 
 .contact-us {
   padding-top: 30px;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+     /* IE10+ CSS styles go here */
+     .hub-item-container .hub-item img{
+       width: 100%;
+     }
 }

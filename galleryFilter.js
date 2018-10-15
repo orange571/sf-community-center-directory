@@ -307,6 +307,7 @@ $(document).ready(function () {
       filterData(tagFilterArray);
     }
   }
+  
   function findOne (arr1, arr2) {
       return arr1.some(function (item) {
           return arr2.indexOf(item) >= 0;
@@ -337,6 +338,7 @@ $(document).ready(function () {
     processPillBox();
   })
 
+  //Expand Button Text Change
   $('.expand-btn').on('click', function(){
     if($('.expand-btn').text() == "Expand Details") {
       $('.expand-btn').text('Collapse Details');
@@ -347,6 +349,7 @@ $(document).ready(function () {
     }
   });
 
+  //Toggle between grid and list view
   $('.grid-btn').on('click', function(){
     $('.gallery-view').removeClass('list').addClass('grid');
     if($('.expand-btn').text() == "Expand Details") {
@@ -355,6 +358,7 @@ $(document).ready(function () {
       $('.hub-info').show()
     }
   });
+
   $('.list-btn').on('click', function(){
     $('.hub-info').show()
     $('.gallery-view').removeClass('grid').addClass('list');

@@ -3,19 +3,17 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-a {
-  word-break: break-all;
-}
-
 main {
   min-height: calc(100vh - 116px);
-  margin: 0;
+  margin: 0 auto;
 }
 
 main, .navbar {
   max-width: 1640px;
-  margin-left: auto;
-  margin-right: auto;
+}
+
+a {
+  word-break: break-all;
 }
 
 header.landing {
@@ -30,7 +28,6 @@ header.landing {
   text-align:center;
   padding:0 20px;
 }
-
 
 header.landing h1{
   font-family: 'Ropa Sans', sans-serif;
@@ -52,6 +49,13 @@ header.landing h1{
   display: inline-block;
 }
 
+.landing-btn:hover{
+  background-color: #444;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+}
+
 @media (min-width: 500px) {
   header.landing h1{
     font-size: 4rem;
@@ -59,13 +63,6 @@ header.landing h1{
   .landing-btn{
     font-size: 2rem;
   }
-}
-
-.landing-btn:hover{
-  background-color: #444;
-  cursor: pointer;
-  text-decoration: none;
-  color: #fff;
 }
 
 footer {
@@ -83,7 +80,7 @@ footer .fa{
 }
 
 .custom-toggler .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.9)' stroke-width='3.5' stroke-linecap='square' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.9)' stroke-width='3.5' stroke-linecap='square' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"));
 }
 
 button.navbar-toggler {
@@ -133,8 +130,6 @@ header.navigation {
 nav {
   flex: 1 1 auto;
 }
-
-
 
 .map-view-container {
   display: flex;

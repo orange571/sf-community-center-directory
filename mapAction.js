@@ -332,11 +332,26 @@ function flyAndPrintToHub(hubObjectId) {
   }
 }
 
-if(window.location.search){
-  var urlParams = new URLSearchParams(window.location.search);
-  if(urlParams.has('hub')){
-    var hubId = urlParams.get('hub');
-    flyAndPrintToHub(hubId);
+function urlParams(name){
+    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.search);
+    if (results==null){
+       return null;
+    }
+    else{
+       return decodeURI(results[1]) || 0;
+    }
+}
+
+if(window.location.search.length > 0){
+  if(typeof URLSearchParams == 'function'){
+    var urlParams = new URLSearchParams(window.location.search);
+    if(urlParams.has('hub')){
+      var hubId = urlParams.get('hub');
+      flyAndPrintToHub(hubId);
+    }
+  } else {
+    var urlParams = urlParams('hub');
+    flyAndPrintToHub(urlParams);
   }
 };
 

@@ -1,4 +1,4 @@
-$(function () {
+$(document).ready(function () {
 
 var data = [
         {
@@ -258,7 +258,6 @@ for (var i=0; i<data.length; i++) {
 
 $('#location-container').html(locationContents);
 
-
 var mymap = L.map('mapid').setView([37.754449, -122.450724], 12);
 var osmUrl = 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
   osmAttrib = '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -317,7 +316,6 @@ function printDetails(hubObjectId) {
 	detailContents += "<cite>- <a href='" + data[hubIndex].website + "'>"+ data[hubIndex].website +"</a></cite>";
 	detailContents += "</div></section>";
 	$('.location-details').html(detailContents);
-  console.log(detailContents);
 }
 
 function flyAndPrintToHub(hubObjectId) {
@@ -334,12 +332,13 @@ function flyAndPrintToHub(hubObjectId) {
   }
 }
 
-var urlParams = new URLSearchParams(window.location.search);
-
-if(urlParams.has('hub')){
-  var hubId = urlParams.get('hub');
-  flyAndPrintToHub(hubId);
-}
+if(window.location.search){
+  var urlParams = new URLSearchParams(window.location.search);
+  if(urlParams.has('hub')){
+    var hubId = urlParams.get('hub');
+    flyAndPrintToHub(hubId);
+  }
+};
 
 $("#location-container").on("click",'.location-summary', function () {
   var hubObjectId = $(this).closest('.location-summary')[0].dataset.hubId;

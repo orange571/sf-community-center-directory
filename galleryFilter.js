@@ -1,4 +1,4 @@
-$(function () {
+$(document).ready(function () {
 
   var data = [
           {
@@ -345,7 +345,7 @@ $(function () {
       $('.expand-btn').text('Expand Details');
       $('.hub-info').slideUp();
     }
-  })
+  });
 
   $('.grid-btn').on('click', function(){
     $('.gallery-view').removeClass('list').addClass('grid');
@@ -354,7 +354,6 @@ $(function () {
     } else {
       $('.hub-info').show()
     }
-
   });
   $('.list-btn').on('click', function(){
     $('.hub-info').show()
